@@ -1,0 +1,1400 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <link rel="stylesheet" href="assests/css/style.css">
+    <link rel="stylesheet" href="assests/css/Product.css">
+
+    <title>Product Gallery</title>
+</head>
+
+<body>
+    <!-- header section starts  -->
+
+    <header id="topheader">
+
+        <nav class="navbar navbar-expand-lg  navbar-dark" aria-label="Tenth navbar example">
+            <div class="container-fluid">
+                <button class="navbar-toggler collapsed mb-3 text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <img src="assests/images/logo.png" alt="" class="image-fluid rounded-circle" style="width:8vh">
+                <div class="brand py-2"><a href="#" class="text-white">&nbspGalerie d'antiquités®</a></div>
+                <div class="navbar-collapse justify-content-md-center collapse" id="navbarsExample08">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html#services">Services</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#gallery" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Gallery
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="index.html#topcategory">Top Categories</a></li>
+                                <li><a class="dropdown-item" href="index.html#featured">Featured Products</a></li>
+                                <li><a class="dropdown-item" href="index.html#new">New Arrivals</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item text-dark" href="#">All Categories</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html#reviews">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#deals">Deals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="icons text-white">
+                        <i class="fas fa-search px-2" id="search-btn"></i>
+                        <i class="fas fa-heart px-2" id="wishlist-btn"></i>
+                        <i class="fas fa-shopping-cart px-2" id="cart-btn"></i>
+                        <i class="fas fa-user px-2" id="login-btn"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <form action="" class="search-bar-container" onclick="search()">
+            <input type="search" id="search-bar" placeholder="search here...">
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+
+    </header>
+    <!-- header section ends -->
+
+    <!-- login form container  -->
+
+    <div class="login-form-container text-center" id="login">
+
+        <i class="fas fa-times" id="form-close"></i>
+
+        <form action="">
+            <h3>Galerie d'antiquités®</h3>
+            <hr>
+            <input type="email" class="box" placeholder="enter your email" required>
+            <input type="password" class="box" placeholder="enter your password" required>
+            <input type="submit" value="login" class="btn">
+            <p><a href="#forget" onclick="forget()"><b>forget password?</b></a></p>
+            <p>Don't have an account? <a href="#signup" onclick="signup()"><b>Signup now</b></a></p>
+        </form>
+
+    </div>
+
+    <!-- signup form container  -->
+
+    <div class="signup-form-container text-center" id="signup">
+
+        <i class="fas fa-times" id="signup-close"></i>
+
+        <form action="">
+            <h3>Galerie d'antiquités®</h3>
+            <hr>
+            <input type="name" class="box" placeholder="enter your name" required>
+            <input type="email" class="box" placeholder="enter your email" required>
+            <input type="password" class="box" placeholder="enter your password" required>
+            <input type="submit" value="signup" class="btn">
+            <p>Already have an account? <a href="#login" onclick="login()"><b>Login now</b></a></p>
+        </form>
+
+    </div>
+
+
+    <!-- forget password container  -->
+
+    <div class="forget-password-container text-center" id="forget">
+
+        <i class="fas fa-times" id="forget-close"></i>
+
+        <form action="">
+            <h3>Galerie d'antiquités®</h3>
+            <hr>
+            <input type="email" class="box" placeholder="enter your email" required>
+            <input type="submit" value="send OTP" class="btn" onclick="otp()">
+        </form>
+
+    </div>
+
+    <!-- otp container  -->
+
+    <div class="otp-container text-center" id="otp">
+
+        <i class="fas fa-times" id="otp-close"></i>
+
+        <form action="">
+            <h3>Galerie d'antiquités®</h3>
+            <hr>
+            <input type="number" class="box" placeholder="enter OTP">
+            <div class="d-flex flex-row">
+                <input type="submit" value="Verify" class="btn mx-2" onclick="reset()">
+                <input type="submit" value="Resend OTP" class="btn mx-2" onclick="otp()">
+            </div>
+        </form>
+
+    </div>
+
+    <!-- reset password container  -->
+
+    <div class="reset-password-container text-center" id="reset">
+
+        <i class="fas fa-times" id="reset-close"></i>
+
+        <form action="">
+            <h3>Galerie d'antiquités®</h3>
+            <hr>
+            <p>Please reset your password</p>
+            <div class="d-flex">
+                <input type="password" class="box" placeholder="enter your new password" required>
+                <input type="submit" value="Change Password" class="btn">
+            </div>
+        </form>
+
+    </div>
+
+    <main>
+
+        <h1 class="text-center headingPro">PRODUCT GALLERY</h1>
+
+
+        <section id="jewellery" class="py-5">
+            <h1 class="text-center mb-5" style="text-decoration: underline 5px var(--carribean-green);">JEWELLERY</h1>
+            <div class="container">
+                <div class="product-items">
+
+
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns " style="align-items: center;">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">Lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">Lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+
+                        <div class="off-info">
+                            <h2 class="sm-title">25% off</h2>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">Lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">Lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+
+                    </div>
+
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+
+                        <div class="off-info">
+                            <h2 class="sm-title">25% off</h2>
+                        </div>
+                    </div> <!-- end of single product -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ******************************************************************************* -->
+
+        <section id="crockery" class="py-5">
+            <h1 class="text-center mb-5" style="text-decoration: underline 5px var(--carribean-green);">CROCKERY</h1>
+            <div class="container">
+                <div class="product-items">
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+                    </div>
+
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+
+                        <div class="off-info">
+                            <h2 class="sm-title">35% off</h2>
+                        </div>
+                    </div> <!-- end of single product -->
+                </div>
+            </div>
+        </section>
+
+        <!-- **************************************************************************************   -->
+
+        <section id="clocks" class="py-5">
+            <h1 class="text-center mb-5" style="text-decoration: underline 5px var(--carribean-green);">CLOCKS</h1>
+            <div class="container">
+                <div class="product-items">
+
+
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns " style="align-items: center;">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">Lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">Lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+
+                        <div class="off-info">
+                            <h2 class="sm-title">25% off</h2>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">Lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">Lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+
+                    </div>
+
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+
+                        <div class="off-info">
+                            <h2 class="sm-title">25% off</h2>
+                        </div>
+                    </div> <!-- end of single product -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ****************************************************************************************  -->
+
+        <section id="SCULPTURES" class="py-5">
+            <h1 class="text-center mb-5" style="text-decoration: underline 5px var(--carribean-green);">SCULPTURES</h1>
+            <div class="container">
+                <div class="product-items">
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+                    </div>
+
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+
+                        <div class="off-info">
+                            <h2 class="sm-title">35% off</h2>
+                        </div>
+                    </div> <!-- end of single product -->
+                </div>
+            </div>
+        </section>
+
+        <!-- *********************************************************************** -->
+
+        <section id="lamp" class="py-5">
+            <h1 class="text-center mb-5" style="text-decoration: underline 5px var(--carribean-green);">LAMP</h1>
+            <div class="container">
+                <div class="product-items">
+
+
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns " style="align-items: center;">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">Lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">Lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+
+                        <div class="off-info">
+                            <h2 class="sm-title">25% off</h2>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">Lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">Lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+
+                    </div>
+
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+
+                        <div class="off-info">
+                            <h2 class="sm-title">25% off</h2>
+                        </div>
+                    </div> <!-- end of single product -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ****************************************************************************************   -->
+
+        <section id="other" class="py-5">
+            <h1 class="text-center mb-5" style="text-decoration: underline 5px var(--carribean-green);">OTHER CATEGORIES
+            </h1>
+            <div class="container">
+                <div class="product-items">
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+                    </div>
+
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="assests/images/product.png" alt="product image">
+                            </div>
+                            <div class="product-btns">
+
+                                <button type="button" class="btn-cart">
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy">
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-heart"></i></span>
+                                </button>
+                                <button type="button" class="btn-wishlist">
+                                    <span><i class="fas fa-eye"></i></span>
+
+                                </button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">lorem</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            <a href="#" class="product-name">lorem ipsum</a>
+                            <p class="product-price">$ 150.00</p>
+                            <p class="product-price">$ 133.00</p>
+                        </div>
+
+                        <div class="off-info">
+                            <h2 class="sm-title">35% off</h2>
+                        </div>
+                    </div> <!-- end of single product -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- footer section  starts -->
+        <section class="footer">
+            <hr style="height: 5px;">
+            <div class="box-container row px-5 py-5">
+
+                <div class="boxx first col-md-3 py-3 px-5">
+                    <h3 class="text-uppercase">about us</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quas magni pariatur est
+                        accusantium
+                        voluptas enim nemo facilis sit debitis.</p>
+                </div>
+                <div class="boxx col-md-3 d-flex flex-column text-center text-uppercase py-3">
+                    <h3>quick links</h3>
+                    <a href="index.html">home</a>
+                    <a href="index.html#services">services</a>
+                    <a href="#">gallery</a>
+                    <a href="index.html#deals">deals</a>
+                    <a href="index.html#reviews">review</a>
+                    <a href="contact.html">contact</a>
+                </div>
+                <div class="boxx col-md-3 d-flex flex-column text-center text-uppercase py-3">
+                    <h3>follow us</h3>
+                    <a href="#">facebook</a>
+                    <a href="#">instagram</a>
+                    <a href="#">twitter</a>
+                    <a href="#">linkedin</a>
+                </div>
+                <div class="boxx col-md-3 d-flex flex-column text-center py-3">
+                    <h3 class="text-uppercase">contact us</h3>
+                    <p> <i class="fas fa-home"></i>
+                        Delhi,
+                        India - 110007
+                    </p>
+                    <p> <i class="fas fa-phone"></i>
+                        +91 0000000000
+                    </p>
+                    <p> <i class="fas fa-globe"></i>
+                        antiquegallery@antique.com
+                    </p>
+                </div>
+
+            </div>
+
+            <h1 class="credit text-center text-uppercase pb-3 px-2"> created by <span> Galerie d'antiquités® </span> |
+                All
+                rights reserved!
+            </h1>
+
+        </section>
+        <!-- footer section ends -->
+    </main>
+
+    <script src="assests/js/main.js"></script>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+</body>
+
+</html>

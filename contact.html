@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+
+
+
+<head>
+
+  <title>Antique Gallery</title>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  <!-- CSS STYLE SHEETS -->
+  <link rel="stylesheet" type="text/css" href="assests/css/contact.css">
+  <link rel="stylesheet" href="assests/css/style.css">
+  <link rel="stylesheet" href="assests/css/Product.css">
+
+  <!-- GOOGLE FONTS
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet"> -->
+
+  
+</head>
+  <body>
+
+    <!-- header section starts  -->
+
+    <header id="topheader">
+
+      <nav class="navbar navbar-expand-lg  navbar-dark" aria-label="Tenth navbar example">
+          <div class="container-fluid">
+              <button class="navbar-toggler collapsed mb-3 text-white" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <img src="assests/images/logo.png" alt="" class="image-fluid rounded-circle" style="width:8vh">
+              <div class="brand py-2"><a href="#" class="text-white">&nbspGalerie d'antiquités®</a></div>
+              <div class="navbar-collapse justify-content-md-center collapse" id="navbarsExample08">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" aria-current="page" href="index.html#services">Services</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#gallery" id="navbarDropdown" role="button"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+                              Gallery
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="index.html#topcategory">Top Categories</a></li>
+                              <li><a class="dropdown-item" href="index.html#featured">Featured Products</a></li>
+                              <li><a class="dropdown-item" href="index.html#new">New Arrivals</a></li>
+                              <li>
+                                  <hr class="dropdown-divider">
+                              </li>
+                              <li><a class="dropdown-item text-dark" href="indexPro.html">All Categories</a></li>
+                          </ul>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" aria-current="page" href="index.html#reviews">Reviews</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="index.html#deals">Deals</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" aria-current="page" href="#">Contact</a>
+                      </li>
+                  </ul>
+              </div>
+              <div>
+                  <div class="icons text-white">
+                      <i class="fas fa-search px-2" id="search-btn"></i>
+                      <i class="fas fa-heart px-2" id="wishlist-btn"></i>
+                      <i class="fas fa-shopping-cart px-2" id="cart-btn"></i>
+                      <i class="fas fa-user px-2" id="login-btn"></i>
+                  </div>
+              </div>
+          </div>
+      </nav>
+      <form action="" class="search-bar-container" onclick="search()">
+          <input type="search" id="search-bar" placeholder="search here...">
+          <label for="search-bar" class="fas fa-search"></label>
+      </form>
+
+  </header>
+  <!-- header section ends -->
+
+  <!-- login form container  -->
+
+  <div class="login-form-container text-center" id="login">
+
+      <i class="fas fa-times" id="form-close"></i>
+
+      <form action="">
+          <h3>Galerie d'antiquités®</h3>
+          <hr>
+          <input type="email" class="box" placeholder="enter your email" required>
+          <input type="password" class="box" placeholder="enter your password" required>
+          <input type="submit" value="login" class="btn">
+          <p><a href="#forget" onclick="forget()"><b>forget password?</b></a></p>
+          <p>Don't have an account? <a href="#signup" onclick="signup()"><b>Signup now</b></a></p>
+      </form>
+
+  </div>
+
+  <!-- signup form container  -->
+
+  <div class="signup-form-container text-center" id="signup">
+
+      <i class="fas fa-times" id="signup-close"></i>
+
+      <form action="">
+          <h3>Galerie d'antiquités®</h3>
+          <hr>
+          <input type="name" class="box" placeholder="enter your name" required>
+          <input type="email" class="box" placeholder="enter your email" required>
+          <input type="password" class="box" placeholder="enter your password" required>
+          <input type="submit" value="signup" class="btn">
+          <p>Already have an account? <a href="#login" onclick="login()"><b>Login now</b></a></p>
+      </form>
+
+  </div>
+
+
+  <!-- forget password container  -->
+
+  <div class="forget-password-container text-center" id="forget">
+
+      <i class="fas fa-times" id="forget-close"></i>
+
+      <form action="">
+          <h3>Galerie d'antiquités®</h3>
+          <hr>
+          <input type="email" class="box" placeholder="enter your email" required>
+          <input type="submit" value="send OTP" class="btn" onclick="otp()">
+      </form>
+
+  </div>
+
+  <!-- otp container  -->
+
+  <div class="otp-container text-center" id="otp">
+
+      <i class="fas fa-times" id="otp-close"></i>
+
+      <form action="">
+          <h3>Galerie d'antiquités®</h3>
+          <hr>
+          <input type="number" class="box" placeholder="enter OTP">
+          <div class="d-flex flex-row">
+              <input type="submit" value="Verify" class="btn mx-2" onclick="reset()">
+              <input type="submit" value="Resend OTP" class="btn mx-2" onclick="otp()">
+          </div>
+      </form>
+
+  </div>
+
+  <!-- reset password container  -->
+
+  <div class="reset-password-container text-center" id="reset">
+
+      <i class="fas fa-times" id="reset-close"></i>
+
+      <form action="">
+          <h3>Galerie d'antiquités®</h3>
+          <hr>
+          <p>Please reset your password</p>
+          <div class="d-flex">
+              <input type="password" class="box" placeholder="enter your new password" required>
+              <input type="submit" value="Change Password" class="btn">
+          </div>
+      </form>
+
+  </div>
+
+  <!-- ************************************************************************************************** -->
+      
+          <div class="row">
+          <div class="col-md-6 left1">
+              <h1 class="contact-row-heading">i see it,<br>i like it,<br>i want it,<br>i got it.<br>yeah!</h1>
+          </div>
+          <div class="col-md-6 right1">
+              <div>
+                  <p style="font-size: 1.6rem;"><strong>Galerie d'antiquités<sup>®</sup></strong></p>
+                  <p>Shri Guru Tegh Bahadur Khalsa College,<br/>
+                      University Of Delhi,<br/> 
+                      Arts Faculty Rd,<br/> University Enclave,<br/> 
+                      New Delhi, Delhi 110007<br/>
+                  </p>
+                    <a href="tel:+61396963777">+61 3 9696 3777</a><br />
+                    <a href="mailto:harshitakamra392@gmail.com">Antiquegallery@antique.com</a>
+                </p>
+              </div>
+
+              <div class="contact">                
+                  <div class="d-flex align-items-stretch">
+                      <form action="mailto:sksaloni27@gmail.com" method="POST" enctype="multipart/form-data"
+                          name="EmailForm">
+                          <div class="row">
+
+                              <div class="form-group col-md-6">
+                                  <input type="text" name="name" placeholder="Your Name" class="form-control"
+                                      id="name" style="background: transparent;color:black;">
+                              </div>
+                              <div class="form-group col-md-6">
+                                  <input type="email" placeholder="Your Email" class="form-control" name="email"
+                                      id="email" style="background: transparent;color:black;">
+                              </div>
+
+                          </div>
+
+                          <div class="form-group">
+                              <input type="text" placeholder="Subject" class="form-control" name="subject"
+                                  id="subject" style="background: transparent;color:black;">
+                          </div>
+                          <div class="form-group">
+                              <textarea placeholder="Message" class="form-control" name="message" rows="7"
+                                  style="background: transparent;color:black;"></textarea>
+                          </div>
+                          <div class="buttons d-flex flex-row align-items-center justify-content-center">
+                              <div class="px-lg-2"><button type="submit">Send</button></div>
+                              <div class="px-2"><button type="reset">Reset</button></div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+      <div class="row">
+          <div class="col-md-6 left2">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.7906774917033!2d77.20702441503781!3d28.695907582392763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfdec341ff0dd%3A0xb88fdcff217259a7!2sShri%20Guru%20Tegh%20Bahadur%20Khalsa%20College!5e0!3m2!1sen!2sin!4v1633094965750!5m2!1sen!2sin" width="600" height="450" style="border:0; " allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <div class="col-md-6 right2">
+              <img style="width: 100%; height: 100vh; max-width:100%;height:auto;" src="assests/images/contact.jpg">
+          </div>
+      </div>
+
+
+<!-- footer section  starts -->
+<section class="footer">
+  <hr style="height: 5px;">
+  <div class="box-container row px-5 py-5">
+
+      <div class="boxx first col-md-3 py-3 px-5">
+          <h3 class="text-uppercase">about us</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quas magni pariatur est
+              accusantium
+              voluptas enim nemo facilis sit debitis.</p>
+      </div>
+      <div class="boxx col-md-3 d-flex flex-column text-center text-uppercase py-3">
+          <h3>quick links</h3>
+          <a href="index.html">home</a>
+          <a href="index.html#services">services</a>
+          <a href="indexPro.html">gallery</a>
+          <a href="index.html#deals">deals</a>
+          <a href="index.html#reviews">review</a>
+          <a href="#">contact</a>
+      </div>
+      <div class="boxx col-md-3 d-flex flex-column text-center text-uppercase py-3">
+          <h3>follow us</h3>
+          <a href="#">facebook</a>
+          <a href="#">instagram</a>
+          <a href="#">twitter</a>
+          <a href="#">linkedin</a>
+      </div>
+      <div class="boxx col-md-3 d-flex flex-column text-center py-3">
+          <h3 class="text-uppercase">contact us</h3>
+          <p> <i class="fas fa-home"></i>
+              Delhi,
+              India - 110007
+          </p>
+          <p> <i class="fas fa-phone"></i>
+              +91 0000000000
+          </p>
+          <p> <i class="fas fa-globe"></i>
+              antiquegallery@antique.com
+          </p>
+      </div>
+
+  </div>
+
+  <h1 class="credit text-center text-uppercase pb-3 px-2"> created by <span> Galerie d'antiquités® </span> |
+      All
+      rights reserved!
+  </h1>
+
+</section>
+<!-- footer section ends -->
+
+
+
+
+    <script src="assests/js/main.js"></script>
+
+    <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+
+  </body>
+</html>
