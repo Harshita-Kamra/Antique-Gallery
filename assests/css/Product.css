@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto+Slab:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Birthstone&family=Festive&family=Fredericka+the+Great&family=Niconne&family=Oleo+Script&family=Pinyon+Script&family=Rye&display=swap');
 
 :root{
     --white-light: rgba(255, 255, 255, 0.5);
     --alice-blue: #f8f9fa;
-    --carribean-green: #c9b040;
-    /* --carribean-green: #40c9a2; */
-    /* --carribean-green: #aabe8e; */
+    --gold: #c9b040;
+    /* --gold: #40c9a2; */
+    /* --gold: #aabe8e; */
     --gray: #ededed;
 }
 *{
@@ -24,23 +25,20 @@ main {
 }
 
 .headingPro {
-    text-transform: uppercase;
-    font-size: 5rem;
-    margin-top: 8%;
-    color: var(--carribean-green);
-    text-shadow: 2px 2px #927e26;
+    font-family: 'Birthstone', cursive;
+    color:  var(--gold);
+    text-shadow: 1.5px 1.5px #927e26;
+    margin-top: 7%;
 }
 
 @media (max-width:1024px) {
     .headingPro {
-        font-size: 3rem;
         margin-top: 25%;
     }
 }
 
 @media (max-width:600px) {
     .headingPro {
-        font-size: 2rem;
         margin-top: 50%;
     }
 }
@@ -106,20 +104,20 @@ img{
     color: white;
 }
 .btn-cart:hover{
-    background: var(--carribean-green);
+    background: var(--gold);
 }
 .btn-buy{
     background: white;
 }
 .btn-buy:hover{
-    background: var(--carribean-green);
+    background: var(--gold);
     color: #fff;
 }
 .btn-wishlist{
     background: white;
 }
 .btn-wishlist:hover{
-    background: var(--carribean-green);
+    background: var(--gold);
     color: #fff;
 }
 
@@ -133,7 +131,7 @@ img{
     align-items: center;
 }
 .rating span{
-    color: var(--carribean-green);
+    color: var(--gold);
 }
 .product-name{
     color: black;
@@ -148,24 +146,26 @@ img{
     padding-right: 0.6rem;
     display: inline-block;
 }
-.product-price:first-of-type{
+.product-price-strike{
+    display: inline-block;
     text-decoration: line-through;
-    color: var(--carribean-green);
+    color: var(--gold);
 }
 .product-img img{
     transition: transform 0.6s ease;
 }
 .product:hover .product-img img{
+    /* increase size of img */
     transform: scale(1.1);
 }
 .product:hover .product-img{
-    background: var(--carribean-green);
+    background: var(--gold);
 }
 .product:hover .product-btns{
     opacity: 1;
 }
 .off-info .sm-title{
-    background: var(--carribean-green);
+    background: var(--gold);
     color: white;
     display: inline-block;
     padding: 0.5rem;
@@ -183,6 +183,7 @@ img{
 @media screen and (min-width: 700px){
     .product-items{
         display: grid;
+        /* fr unit can be used for grid-rows and grid-columns values. It stands for “fraction of available space” */
         grid-template-columns: repeat(2, 1fr);
     }
 }

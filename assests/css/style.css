@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Birthstone&family=Festive&family=Fredericka+the+Great&family=Niconne&family=Oleo+Script&family=Pinyon+Script&family=Rye&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -15,18 +17,14 @@ a{
     text-decoration: none;
 }
 
+
 /* ******************************** navbar ****************************** */
-.navbar .nav-item > .nav-link.active  {
-    color: var(--carribean-green) !important;
-}
 header{
     position: fixed;
     top:0; left: 0; right:0;
     z-index: 1000;
 }
 .navbar {
-    background-color: #000;
-    box-shadow: 0px 4px 8px rgba(0,0,0,.5);
     padding: 1% 5%;
 }
 
@@ -46,12 +44,16 @@ header nav .icons {
     padding-top: 10px;
 }
 
-header li:hover a {
-    text-decoration: underline 3px var(--carribean-green) !important;
+header nav .icons a i{
+    color: white !important;
 }
 
-header i:hover, header label:hover {
-    color: var(--carribean-green) !important;
+header li:hover a {
+    text-decoration: underline 3px var(--gold) !important;
+}
+
+header i:hover, header label:hover, header a i:hover {
+    color: var(--gold) !important;
 }
 
 header .dropdown-menu li a {
@@ -63,6 +65,7 @@ header .dropdown-menu li:hover a {
     color: black !important;
     text-decoration: none !important;
 }
+
 
 @media (max-width:1024px){
     .navbar {
@@ -107,9 +110,9 @@ header .search-bar-container{
   }
   /* ************************************ login *************************************** */
 
-  .login-form-container, .signup-form-container, .forget-password-container, .otp-container, .reset-password-container{
+  .login-form-container, .signup-form-container, .forget-password-container,.otp-container, .reset-password-container {
     position: fixed;
-    top:-120%; left: 0;
+    top:-500%; left: 0;
     z-index: 10000;
     min-height: 100vh;
     width:100%;
@@ -118,8 +121,8 @@ header .search-bar-container{
     align-items: center;
     justify-content: center;
   }
-  
-  .login-form-container.active, .signup-form-container.active, .forget-password-container.active, .otp-container.active, .reset-password-container.active{
+
+  .login-form-container.active, .signup-form-container.active, .forget-password-container.active,.otp-container.active, .reset-password-container.active {
     top:0;
   }
   
@@ -160,7 +163,7 @@ header .search-bar-container{
     margin-top: 5% ;
     margin-bottom: 5%;
     box-sizing: content-box;
-    background-color:var(--carribean-green);
+    background-color:var(--gold);
     font-size: 1.2rem;
     padding: 10px 20px;
   }
@@ -172,14 +175,14 @@ header .search-bar-container{
   }
   
   .login-form-container form p a, .signup-form-container form p a{
-    color:var(--carribean-green);
+    color:var(--gold);
   }
   
   .login-form-container form p a:hover, .signup-form-container form p a:hover{
     color:#333;
   }
   
-  .login-form-container #form-close, .signup-form-container #signup-close, .forget-password-container #forget-close, .otp-container #otp-close, .reset-password-container #reset-close{
+  .login-form-container #form-close, .signup-form-container #signup-close, .forget-password-container #forget-close,.otp-container #otp-close, .reset-password-container #reset-close{
     position: absolute;
     top:1.5rem; right:2.5rem;
     font-size: 2rem;
@@ -220,27 +223,6 @@ header .search-bar-container{
     width: 100%;
 }
 
-#home .content{
-    position: absolute;
-    top:50%; left: 5%;
-    transform: translateY(-50%);
-}
-
-#home .content h3{
-    color:#fff;
-    text-shadow: 0 .3rem .5rem #000;
-    font-size: 5rem;
-    text-transform: uppercase;
-}
-
-#home .content p{
-    color:#fff;
-    font-size: 2.5rem;
-    padding:2rem 0;
-    margin-top: 50px;
-    width: 50rem;
-}
-
 @media (max-width:600px){
     ::-webkit-scrollbar {
         width: 0;  
@@ -249,53 +231,52 @@ header .search-bar-container{
     #home img {
         height:100vh;
     }
-    #home .content h3{
-        margin-top: 70px;
-        font-size: 3rem;
-    }
-
-    #home .content p{
-        font-size: 1.7rem;
-        width: auto;
-    }
 }
 
 /* ******************************* services*********************************** */
-#services .services {
-    border-right:1px solid rgb(158, 150, 150);
-}
-
-#services .last {
-    border-right:none;
-}
-
-#services .services:hover .icon {
-  color: var(--carribean-green);
-} 
-
 #services .icon {
-    color:rgb(88, 86, 86);
+    color:rgb(145, 144, 144);
 }
-@media (max-width:600px) {
-    #services .services {
-        border-right: none;
-        border-bottom:1px solid rgb(158, 150, 150);
-    }
-    #services .last {
-        border-bottom:none;
-    }
+
+/* *********************************Vintage heading *********************************** */
+
+.vintage-heading{
+    font-family: 'Birthstone', cursive;
+    color:  var(--gold);
+    text-shadow: 1.5px 1.5px #927e26;
 }
+
+/* ********************************** topcategory *************************************** */
+
+#topcategory .category {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-shadow: 1.5px 1.5px #927e26;
+}
+
+/* ***************************** Product name hover ******************************* */
+
+.product-name:hover{
+    color: #927e26;
+}
+
+
 
 /* ******************************* deals **************************************** */
 
 .deal .box-container{
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+
 }
 
 .deal .box-container .box{
+    /* all the elements will grow to take up an equal portion of the parent element */
+    /* flex: [flex-grow] [flex-shrink] [flex-basis] */
+    /* flex: [max] [min] [ideal size] */
     flex:1 1 40rem;
     height: 25rem;
     margin:2rem;
@@ -309,6 +290,8 @@ header .search-bar-container{
     height: 100%;
     width: 100%;
     object-fit: cover;
+    padding: 0;
+    margin: 0;
 }
 
 .deal .box-container .box .content{
@@ -328,13 +311,22 @@ header .search-bar-container{
     color:#fff;
 }
 
+@media (max-width:600px) {
+    .deal .box-container .box .content h3{
+        font-size: 2rem;
+    }
+    .deal .box-container .box .content p{
+        font-size: 1.5rem
+    }
+}
+
 .deal .box-container .box .content .btn{
     margin:1rem 0;
 }
 .btn{
     height: 4rem;
     width: 14rem;
-    background: var(--carribean-green);
+    background: var(--gold);
     color:#fff;
     font-size: 1.5rem;
     cursor: pointer;
@@ -345,7 +337,7 @@ header .search-bar-container{
 /* ****************************** footer ************************************* */
 .footer{
     box-sizing: content-box;
-    background: white;
+    background: var(--gray);
     margin:0;
     padding:0;
     color:black;
@@ -369,25 +361,21 @@ header .search-bar-container{
   }
 
   .footer .boxx {
-    border-right:1px solid rgb(158, 150, 150);
-    font-size: .7rem;
-  }
-  .footer .first {
-    border-left:1px solid rgb(158, 150, 150);
+    font-size: .9rem;
   }
 
   .footer h1 {
       font-size: 1rem !important;
   }
 
-  @media (max-width:600px) {
-      .footer .boxx, .footer .first {
-         border:none;
-      }
+  .footer i:hover{
+      color: var(--gold);
+  }
+
+  @media (max-width:800px) {
       .footer h1{
           font-size: .6rem !important;
       }
   }
 
-  /* ****************************************************************** */
-  
+ 
